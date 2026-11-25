@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>  Desafio 04   </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+</head>
+
+<body class="bg-light">
+    <body style="background-image: url('clinica.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"></body>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                DS • Bootstrap 5
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPortifolio">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPortifolio">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="desafio01.html">Desafio 01</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="desafio02.html">Desafio 02</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="desafio03.html">Desafio 03</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="desafio04.html">Desafio 04</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="desafio05.html">Desafio 05</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- FORMULÁRIO DE ATENDIMENTO -->
+    <div class="container my-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-10 col-lg-8">
+
+                <div class="card shadow-sm p-4">
+
+                    <h3 class="mb-2">Cadastro de Atendimento</h3>
+
+                    <p class="text-muted mb-4">
+                        Preencha os dados para registrar um novo atendimento.
+                    </p>
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <!-- NOME -->
+                            <div class="col-sm-6">
+
+                                <label class="form-label">Nome</label>
+
+                                <input type="text" class="form-control"
+                                    placeholder="Digite seu nome" required>
+
+                            </div>
+
+
+                            <!-- SOBRENOME -->
+                            <div class="col-sm-6">
+
+                                <label class="form-label">Sobrenome</label>
+
+                                <input type="text" class="form-control"
+                                    placeholder="Digite seu sobrenome" required>
+
+                            </div>
+
+
+                            <!-- E-MAIL -->
+                            <div class="col-sm-6">
+
+                                <label class="form-label">E-mail</label>
+
+                                <input type="email" class="form-control"
+                                    placeholder="exemplo@email.com" required>
+
+                            </div>
+
+
+                            <!-- TELEFONE -->
+                            <div class="col-sm-6">
+
+                                <label class="form-label">Telefone / WhatsApp</label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">+55</span>
+
+                                    <input type="tel" class="form-control"
+                                        placeholder="(00) 00000-0000" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TIPO DE SERVIÇO -->
+                            <div class="col-12">
+
+                                <label class="form-label">Tipo de Serviço</label>
+
+                                <select class="form-select" required>
+
+                                    <option value="" selected disabled>
+                                        Escolha uma opção
+                                    </option>
+
+                                    <option value="manutencao">
+                                        Manutenção
+                                    </option>
+
+                                    <option value="consulta">
+                                        Consulta
+                                    </option>
+
+                                    <option value="avaliacao">
+                                        Avaliação
+                                    </option>
+
+                                    <option value="outro">
+                                        Outro serviço
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- VALOR ESTIMADO -->
+                            <div class="col-12">
+
+                                <label class="form-label">Valor estimado</label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">R$</span>
+
+                                    <input type="number" class="form-control"
+                                        placeholder="0,00" min="0" step="0.01">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- OBSERVAÇÕES -->
+                            <div class="col-12">
+
+                                <label class="form-label">Observações</label>
+
+                                <textarea class="form-control" rows="4"
+                                    placeholder="Descreva o atendimento ou informe detalhes importantes..."></textarea>
+
+                            </div>
+
+
+                            <!-- CONFIRMAÇÃO -->
+                            <div class="col-12">
+
+                                <div class="form-check">
+
+                                    <input type="checkbox"
+                                        class="form-check-input"
+                                        id="ciencia" required>
+
+                                    <label for="ciencia" class="form-check-label">
+
+                                        Confirmo que estou ciente das informações fornecidas.
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- BOTÃO -->
+                            <div class="col-12 mt-4">
+
+                                <button class="btn btn-success w-100" type="submit">
+
+                                    Cadastrar Atendimento
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

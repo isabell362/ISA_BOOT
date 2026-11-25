@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Painel da Biblioteca </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body
+    style="background-image: url('biblioteca.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">DS • Bootstrap 5</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPortifolio">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPortifolio">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desafio01.html">Desafio 01</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desafio02.html">Desafio 02</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desafio03.html">Desafio 03</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desafio04.html">Desafio 04</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="desafio05.html">Desafio 05</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container py-5">
+
+        <!-- CARTÃO DO TÍTULO -->
+        <div class="bg-white bg-opacity-75 rounded-3 p-3 mb-4 text-center shadow-sm">
+            <h2 class="fw-bold mb-1" style="color: #4A3525;">Cantinho do Saber</h2>
+            <p class="text-muted mb-0">Biblioteca Escolar.</p>
+        </div>
+
+        <!-- ALERTA INFORMATIVO -->
+        <div class="alert alert-info shadow-sm" role="alert">
+            <strong>Informativo:</strong> acompanhe os empréstimos e as devoluções dos livros em tempo real!
+        </div>
+
+        <!-- CARTÃO DOS REGISTROS -->
+        <div
+            class="bg-white bg-opacity-75 rounded-3 p-3 mb-3 shadow-sm d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+            <h3 class="mb-0" style="color: #4A3525;">Registros de empréstimos</h3>
+
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+                + Novo registro
+            </button>
+
+        </div>
+
+        <!-- TABELA -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered bg-white">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Código</th>
+                        <th>Livro</th>
+                        <th>Aluno</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelaRegistros">
+
+                    <tr>
+                        <td>001</td>
+                        <td>Dom Casmurro</td>
+                        <td>Mariana Souza</td>
+                        <td>20/11/2026</td>
+                        <td><span class="badge text-bg-warning">Pendente</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>002</td>
+                        <td>O Pequeno Príncipe</td>
+                        <td>Lucas Ferreira</td>
+                        <td>21/11/2026</td>
+                        <td><span class="badge text-bg-info">Em análise</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>003</td>
+                        <td>Harry Potter</td>
+                        <td>Beatriz Lima</td>
+                        <td>19/11/2026</td>
+                        <td><span class="badge text-bg-success">Finalizado</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>004</td>
+                        <td>O Hobbit</td>
+                        <td>Pedro Alves</td>
+                        <td>22/11/2026</td>
+                        <td><span class="badge text-bg-warning">Pendente</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>005</td>
+                        <td>A Culpa é das Estrelas</td>
+                        <td>Ana Clara</td>
+                        <td>23/11/2026</td>
+                        <td><span class="badge text-bg-success">Finalizado</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- JANELA MODAL -->
+    <div class="modal fade" id="modalCadastro" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Cadastrar empréstimo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="formCadastro">
+
+                        <div class="mb-3">
+                            <label class="form-label">Nome do livro</label>
+                            <input type="text" class="form-control" id="livro" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Nome do aluno</label>
+                            <input type="text" class="form-control" id="aluno" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Data do empréstimo</label>
+                            <input type="date" class="form-control" id="data" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+
+                            <select class="form-select" id="status" required>
+                                <option value="">Selecione...</option>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Em análise">Em análise</option>
+                                <option value="Finalizado">Finalizado</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Cadastrar registro
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DO BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>
